@@ -1,6 +1,18 @@
 import React from 'react';
+import Loadable from 'react-loadable';
 import DateListGroupItem from './DateListGroupItem';
-import PickDates from './PickDates';
+
+// generic loading component to show while transfering section of code
+const LoadingComponent = () => <span className="text-muted"><i className="fa fa-refresh" /></span>;
+// new version of the component, now: loading --> rendered
+const PickDates = Loadable({
+  // this does the dynamic import, and returns a promise
+  loader: () => import('./PickDates'),
+  // this is our generic loading display (optional)
+  LoadingComponent,
+  // this is a delay before we decide to show our LoadingComponent (optional)
+  delay: 200,
+});
 
 class ExampleDates extends React.Component {
   constructor(props) {
