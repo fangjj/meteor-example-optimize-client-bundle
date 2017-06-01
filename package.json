@@ -1,0 +1,15 @@
+{
+  "name": "meteor-example-optimize-client-bundle",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.20.0",
+    "meteor-node-stubs": "~0.2.4",
+    "react": "^15.5.4",
+    "react-dates": "^12.1.0",
+    "react-dom": "^15.5.4",
+    "react-loader": "^2.4.2"
+  }
+}
