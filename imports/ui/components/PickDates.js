@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DateRangePicker } from 'react-dates';
@@ -15,8 +16,8 @@ export default class MyDateRangePicker extends React.Component {
   }
   submit() {
     this.props.onAddDates({
-      startDate: this.state.startDate,
-      endDate: this.state.endDate,
+      startDate: moment(this.state.startDate).toDate(),
+      endDate: moment(this.state.endDate).toDate(),
     });
     this.setState({
       focusedInput: null,
@@ -34,6 +35,7 @@ export default class MyDateRangePicker extends React.Component {
           focusedInput={this.state.focusedInput}
           onFocusChange={focusedInput => this.setState({ focusedInput })}
           isDayBlocked={() => false}
+          isOutsideRange={() => false}
         />
         &nbsp;
         <button className="btn btn-primary btn-lg" onClick={this.submit}>
