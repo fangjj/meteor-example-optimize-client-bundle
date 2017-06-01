@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
+import { DateRangePicker } from 'react-dates';
+import 'react-dates/lib/css/_datepicker.css';
 
 export default class MyDateRangePicker extends React.Component {
   constructor(props) {
@@ -10,11 +11,17 @@ export default class MyDateRangePicker extends React.Component {
       startDate: null,
       endDate: null,
     };
+    this.submit = this.submit.bind(this);
   }
-  submit = () => {
+  submit() {
     this.props.onAddDates({
       startDate: this.state.startDate,
       endDate: this.state.endDate,
+    });
+    this.setState({
+      focusedInput: null,
+      startDate: null,
+      endDate: null,
     });
   }
   render() {
@@ -26,10 +33,13 @@ export default class MyDateRangePicker extends React.Component {
           onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
           focusedInput={this.state.focusedInput}
           onFocusChange={focusedInput => this.setState({ focusedInput })}
+          isDayBlocked={() => false}
         />
-        <button className="button button-primary" onClick={this.submit}>
-          <i className="fa fa-plus" />
+        &nbsp;
+        <button className="btn btn-primary btn-lg" onClick={this.submit}>
           Add
+          &nbsp;
+          <i className="fa fa-plus" />
         </button>
       </div>
     );
