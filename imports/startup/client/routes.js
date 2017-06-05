@@ -5,6 +5,10 @@ import { render } from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Meteor } from 'meteor/meteor';
 import App from '../../ui/layouts/App.js';
+import Dates from '../../ui/pages/Dates.js';
+import Trunk from '../../ui/pages/Trunk.js';
+import Branch from '../../ui/pages/Branch.js';
+// import Lodash from '../../ui/pages/Lodash.js';
 import Documents from '../../ui/pages/Documents.js';
 import NewDocument from '../../ui/pages/NewDocument.js';
 import EditDocument from '../../ui/pages/EditDocument.js';
@@ -30,6 +34,12 @@ Meteor.startup(() => {
     <Router history={ browserHistory }>
       <Route path="/" component={ App }>
         <IndexRoute name="index" component={ Index } />
+        <Route name="Dates" path="/Dates" component={Dates} />
+        <Route name="Trunk" path="/Trunk" component={Trunk} />
+        <Route name="Branch" path="/Branch" component={Branch} />
+        {/*
+        <Route name="Lodash" path="/Lodash" component={Lodash} />
+        */}
         <Route name="documents" path="/documents" component={ Documents } onEnter={ authenticate } />
         <Route name="newDocument" path="/documents/new" component={ NewDocument } onEnter={ authenticate } />
         <Route name="editDocument" path="/documents/:_id/edit" component={ EditDocument } onEnter={ authenticate } />
