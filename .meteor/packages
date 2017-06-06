@@ -16,21 +16,10 @@ standard-minifier-js@2.0.0    # JS minifier run for production mode
 es5-shim@4.6.15                # ECMAScript 5 compatibility for older browsers.
 ecmascript@0.7.2              # Enable ECMAScript2015+ syntax in app code
 
-accounts-password@1.3.5
-accounts-base@1.2.16
 check@1.2.5
 audit-argument-checks@1.0.7
 browser-policy@1.1.0
 
-fourseven:scss@4.5.0
-alanning:roles
-themeteorchef:bert
 static-html@1.1.11
-xolvio:cleaner
-practicalmeteor:mocha
-xolvio:backdoor
-mdg:validated-method
-dburles:factory@1.0.0
-ddp-rate-limiter@1.0.7
-shell-server@0.2.3
-aldeed:collection2-core@2.0.0
+bundle-visualizer
+accounts-base

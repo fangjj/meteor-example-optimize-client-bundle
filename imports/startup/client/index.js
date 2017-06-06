@@ -1,5 +1,16 @@
-import { Bert } from 'meteor/themeteorchef:bert';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './routes.js';
+/* eslint-disable max-len */
 
-Bert.defaults.style = 'growl-top-right';
+import React from 'react';
+import { render } from 'react-dom';
+import { Meteor } from 'meteor/meteor';
+import Lodash from '../../ui/pages/Lodash.js';
+
+Meteor.startup(() => {
+  render(
+    <div>
+      <h2>Lodash below</h2>
+      <Lodash />
+    </div>,
+    document.getElementById('react-root'),
+  );
+});
