@@ -19,6 +19,7 @@ git checkout 03-after-profiling
 git checkout 04-after-optimizing
 git checkout 05-after-optimizing-no-visualizer
 git checkout 06-experiments
+git checkout 07-profiling
 ```
 Be sure to install `npm` packages for your branch:
 
