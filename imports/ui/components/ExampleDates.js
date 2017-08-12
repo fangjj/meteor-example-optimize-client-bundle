@@ -9,7 +9,7 @@ const PickDates = Loadable({
   // this does the dynamic import, and returns a promise
   loader: () => import('./PickDates'),
   // this is our generic loading display (optional)
-  LoadingComponent,
+  loading: LoadingComponent,
   // this is a delay before we decide to show our LoadingComponent (optional)
   delay: 200,
 });
